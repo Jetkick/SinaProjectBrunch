@@ -1,0 +1,213 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: String!
+  name: String!
+  profileImage: String
+  userTag: [String!]
+  info: String
+  email: String!
+  point: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type SubScription {
+  id: String!
+  name: String!
+  profileImage: String
+  info: String
+  subScription: Boolean!
+  subScriptionUser: User!
+  userId: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+type Story {
+  id: String!
+  title: String!
+  subTitle: String
+  text: String!
+  image: String
+  tag: [String!]!
+  userId: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+type Comment {
+  id: String!
+  text: String!
+  cheer: String
+  userId: User!
+  storyId: Story!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+type StoryBook {
+  id: String!
+  title: String!
+  titleCover: String
+  titleTag: [String!]
+  state: [String!]
+  introduction: [String!]!
+  brunchBookIntroduction: String!
+  brunchBookTag: [String!]
+  storyId: [String!]
+  userId: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+type Like {
+  id: String!
+  like: Boolean!
+  storyId: Story!
+  storyBookId: StoryBook!
+  userId: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+type Payment {
+  id: String!
+  text: String!
+  impUid: String!
+  kind: String!
+  paymentMethod: String!
+  paymentType: String!
+  price: Int!
+  paymentConditions: Boolean!
+  status: PAYMENT_STATUS_ENUM!
+  userId: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+}
+
+enum PAYMENT_STATUS_ENUM {
+  PAYMENT
+  CANCEL
+}
+
+type Query {
+  sayHello: String!
+  fetchUser(email: String!): String!
+  fetchComments(storyId: String!): [Comment!]!
+  fetchStories(userId: String!): [Story!]!
+  fetchStory(storyId: String!): Story!
+  fetchStoryBook(storyBookId: String!): StoryBook!
+}
+
+type Mutation {
+  login(email: String!, password: String!): String!
+  restoreAccessToken: String!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  deleteUser: Boolean!
+  createComment(storyId: String!, createCommentInput: CreateCommentInput!): Comment!
+  updateComment(storyId: String!, commentId: String!, updateCommentInput: UpdateCommentInput!): Comment!
+  deleteComment(storyId: String!, commentId: String!): Boolean!
+  createLike(storyId: String!): Like!
+  updateLike(storyId: String!, likeId: String!): Like!
+  createPayment(impUid: String!, point: Int, createpaymentInput: CreatePaymentInput!): Payment!
+  cancelPayment(impUid: String!, createPaymentInput: CreatePaymentInput!): Payment!
+  createStory(createStoryInput: CreateStoryInput!): Story!
+  updateStory(storyId: String!, updateStoryInput: UpdateStoryInput!): Story!
+  deleteStory(storyId: String!): Boolean!
+  createStoryBook(createStoryBookInput: CreateStoryBookInput!, storyId: String): StoryBook!
+  updateStoryBook(updateStoryBookInput: UpdateStoryBookInput!, storyId: String!, storyBookId: String!): StoryBook!
+  deleteStroyBook(storyBookId: String!): Boolean!
+  createSubScription(subScriptionUser: String!): SubScription!
+  cancelSubScription(subScriptionUser: String!): SubScription!
+}
+
+input CreateUserInput {
+  name: String!
+  profileImage: String
+  userTag: [String!]
+  info: String
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  name: String
+  profileImage: String
+  userTag: [String!]
+  info: String
+  email: String
+  password: String
+}
+
+input CreateCommentInput {
+  text: String!
+  type: String!
+  cheer: String
+}
+
+input UpdateCommentInput {
+  text: String
+  type: String
+  cheer: String
+}
+
+input CreatePaymentInput {
+  text: String!
+  kind: String!
+  paymentMethod: String!
+  paymentType: String!
+  price: Int!
+  paymentConditions: Boolean!
+}
+
+input CreateStoryInput {
+  title: String!
+  subTitle: String
+  text: String!
+  image: String
+  tag: [String!]!
+}
+
+input UpdateStoryInput {
+  title: String
+  subTitle: String
+  text: String
+  image: String
+  tag: [String!]
+}
+
+input CreateStoryBookInput {
+  title: String!
+  titleCover: String
+  titleTag: [String!]
+  state: [String!]
+  introduction: [String!]!
+  brunchBookIntroduction: String!
+  brunchBookTag: [String!]
+}
+
+input UpdateStoryBookInput {
+  title: String
+  titleCover: String
+  titleTag: [String!]
+  state: [String!]
+  introduction: [String!]
+  brunchBookIntroduction: String
+  brunchBookTag: [String!]
+}

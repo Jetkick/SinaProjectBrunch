@@ -1,16 +1,18 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
+import { User } from 'src/apis/signUp/entities/signUp.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
 @ObjectType()
-export class User {
+export class SubScription {
   @PrimaryGeneratedColumn('uuid')
   @Field(() => String)
   id: string;
@@ -23,24 +25,21 @@ export class User {
   @Field(() => String, { nullable: true })
   profileImage: string;
 
-  @Column('simple-array', { nullable: true })
-  @Field(() => [String], { nullable: true })
-  userTag: string[];
-
   @Column({ type: 'varchar', length: 300, nullable: true })
   @Field(() => String, { nullable: true })
   info: string;
 
-  @Column({ type: 'varchar', length: 100 })
-  @Field(() => String)
-  email: string;
+  @Column({ type: 'boolean', default: false })
+  @Field(() => Boolean)
+  subScription: boolean;
 
-  @Column({ type: 'varchar', length: 200 })
-  password: string;
+  @ManyToOne(() => User)
+  @Field(() => User)
+  subScriptionUser: User;
 
-  @Column({ default: 0 })
-  @Field(() => Int)
-  point: number;
+  @ManyToOne(() => User)
+  @Field(() => User)
+  userId: User;
 
   @CreateDateColumn()
   @Field(() => Date)
