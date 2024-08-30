@@ -123,8 +123,8 @@ type Mutation {
   createComment(storyId: String!, createCommentInput: CreateCommentInput!): Comment!
   updateComment(storyId: String!, commentId: String!, updateCommentInput: UpdateCommentInput!): Comment!
   deleteComment(storyId: String!, commentId: String!): Boolean!
-  createLike(storyId: String!): Like!
-  updateLike(storyId: String!, likeId: String!): Like!
+  createLike(storyId: String, storyBookId: String): Like!
+  updateLike(storyId: String, storyBookId: String, likeId: String!): Like!
   createPayment(impUid: String!, point: Int, createpaymentInput: CreatePaymentInput!): Payment!
   cancelPayment(impUid: String!, createPaymentInput: CreatePaymentInput!): Payment!
   createStory(createStoryInput: CreateStoryInput!): Story!

@@ -14,11 +14,14 @@ export class LikesResolver {
   @UseGuards(GqlAuthGuard('access'))
   @Mutation(() => Like)
   createLike(
-    @Args('storyId') storyId: string, //
-    @Context() context: IContext,
+    @Args('storyId', { nullable: true }) storyId: string, //
+    @Args('storyBookId', { nullable: true }) storyBookId: string,
+    @Context()
+    context: IContext,
   ): Promise<Like> {
     return this.likesService.createLike({
       storyId,
+      storyBookId,
       user: context.req.user,
     });
   }
@@ -26,12 +29,14 @@ export class LikesResolver {
   @UseGuards(GqlAuthGuard('access'))
   @Mutation(() => Like)
   updateLike(
-    @Args('storyId') storyId: string, //
+    @Args('storyId', { nullable: true }) storyId: string, //
+    @Args('storyBookId', { nullable: true }) storyBookId: string,
     @Args('likeId') likeId: string,
     @Context() context: IContext,
   ): Promise<Like> {
     return this.likesService.updateLike({
       storyId,
+      storyBookId,
       likeId,
       user: context.req.user,
     });
