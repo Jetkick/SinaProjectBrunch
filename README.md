@@ -39,7 +39,7 @@
 - <img src="https://img.shields.io/badge/GitHub-181717?style=flat&amp;logo=GitHub&amp;logoColor=white">
 - <img src="https://img.shields.io/badge/VSCode-007ACC?style=flat&amp;logo=Visual Studio Code&amp;logoColor=white">
 - <img src="https://img.shields.io/badge/DBeaver-382923?style=falt&logo=dbeaver&logoColor=white">
-- <img src="https://img.shields.io/badge/dbdiagram-F08705?style=flat&logo=diagramsdotnet&logoColor=white">
+- <img src="https://img.shields.io/badge/dbdiagram-F08705?style=flat&logo=diagramsdotnet&logoColor=white">  [DB다이어그램](https://dbdiagram.io/d/Sina-Brunch-ERD-665ff0acb65d9338798881e0)
 
 <br>
 
