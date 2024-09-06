@@ -92,7 +92,7 @@
 <br>
 
 ## 회고록
-- 
+- [벨로그](https://velog.io/@tooil10/sinaProjectBrunch-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 
 
@@ -110,5 +110,5 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-```
+
 
