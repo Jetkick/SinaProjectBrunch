@@ -17,11 +17,13 @@ export class CommentsResolver {
   @Mutation(() => Comment)
   createComment(
     @Args('storyId') storyId: string, //
+    @Args('commentId', { nullable: true }) commentId: string,
     @Args('createCommentInput') createCommentInput: CreateCommentInput,
     @Context() context: IContext,
   ): Promise<Comment> {
     return this.commentsService.createComment({
       storyId,
+      commentId,
       createCommentInput,
       user: context.req.user,
     });

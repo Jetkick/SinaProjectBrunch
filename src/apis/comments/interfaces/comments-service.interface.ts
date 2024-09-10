@@ -12,6 +12,7 @@ export interface ICommentsServiceFetchComment {
 
 export interface ICommentsServiceCreate {
   storyId: string;
+  commentId: string;
   createCommentInput: CreateCommentInput;
   user: IAuthUser['user'];
 }

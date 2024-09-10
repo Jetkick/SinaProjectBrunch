@@ -37,6 +37,10 @@ export class Comment {
   @Field(() => Story)
   storyId: Story;
 
+  @ManyToOne(() => Comment, { nullable: true })
+  @Field(() => Comment, { nullable: true })
+  commentId: Comment;
+
   @CreateDateColumn()
   @Field(() => Date)
   createdAt: Date;

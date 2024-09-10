@@ -51,18 +51,34 @@ export class CommentsService {
 
   async createComment({
     storyId,
+    commentId,
     createCommentInput,
     user,
   }: ICommentsServiceCreate): Promise<Comment> {
-    const storyIdId = await this.storiesService.findOneByStoryId({ storyId });
+    if (commentId === undefined) {
+      const storyIdId = await this.storiesService.findOneByStoryId({ storyId });
 
-    const result = this.commentsRepository.create({
-      ...createCommentInput,
-      userId: user.validateUser,
-      storyId: storyIdId,
-    });
+      const result = this.commentsRepository.create({
+        ...createCommentInput,
+        userId: user.validateUser,
+        storyId: storyIdId,
+      });
 
-    return this.commentsRepository.save(result);
+      return this.commentsRepository.save(result);
+    } else if (commentId !== undefined) {
+      const storyIdId = await this.storiesService.findOneByStoryId({ storyId });
+
+      const comment = await this.findOneByCommentId({ commentId });
+
+      const result = this.commentsRepository.create({
+        ...createCommentInput,
+        userId: user.validateUser,
+        storyId: storyIdId,
+        commentId: comment,
+      });
+
+      return this.commentsRepository.save(result);
+    }
   }
 
   async updateComment({
