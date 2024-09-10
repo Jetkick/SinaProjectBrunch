@@ -39,10 +39,13 @@
 - <img src="https://img.shields.io/badge/GitHub-181717?style=flat&amp;logo=GitHub&amp;logoColor=white">
 - <img src="https://img.shields.io/badge/VSCode-007ACC?style=flat&amp;logo=Visual Studio Code&amp;logoColor=white">
 - <img src="https://img.shields.io/badge/DBeaver-382923?style=falt&logo=dbeaver&logoColor=white">
-- <img src="https://img.shields.io/badge/dbdiagram-F08705?style=flat&logo=diagramsdotnet&logoColor=white">
+- <img src="https://img.shields.io/badge/dbdiagram-F08705?style=flat&logo=diagramsdotnet&logoColor=white">  [DB다이어그램](https://dbdiagram.io/d/Sina-Brunch-ERD-665ff0acb65d9338798881e0)
 
 <br>
 
+# 프로젝트 파 보기 및 playGround 간단한 사용 방법
+- [피그마](https://www.figma.com/design/OpVGF0j6GqrMXqoMek6rp5/2%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0-1&node-type=CANVAS&t=GR3aefcLpibblSqo-0)
+<br>
 
 # 📌 구현 사항 설명
 
@@ -57,23 +60,43 @@
 
 ## 구독하기
 ### BE
-- subScription 폴더에는 유저와 구독할 유저를 DB 관계 설정을 통해서 표현하도록 하였다.
+- subScription은 유저와 구독할 유저를 DB 관계 설정을 통해서 표현하도록 하였다.
 
 <br>
 
 ## 이야기 (스토리 or 게시글)
 ### BE
-- stories 폴더는 유저가 집필한 스토리를 관리하는 테이블이다. <br>
+- stories는 유저가 집필한 스토리를 관리하는 테이블이다. <br>
   이야기 혹은 게시글인 이 스토리는 브런치의 가장 핵심 서비스이자 메인 컨텐츠이다.
 
 <br>
 
 ## 댓글/ 좋아요
 ### BE
-- comments
+- likes / comments 는 스토리와 엮여있어서 관계 설정을 통해서 표현하였다.
+
+
+<br>
+
+## 스토리 북
+### BE
+- storyBooks는 브런치의 두번째 핵심 컨텐츠라고 생각한다. <br>
+  연재하고 있다고 알림이나 태그로 표시를 설정할 수 있고 <br>
+  마치 책 처럼 이야기를 한 곳에 엮어 놓아 보기 좋게 정리해 놓은 것이 이야기 책이다.
+
+<br>
+
+## 결제
+### BE
+- payments. 마지막은 결제 시스템이다. <br>
+  결제와 함께 댓글을 달아서 작가를 응원하거나, 책을 구입하거나, 이벤트에 참여하는 등이 있다.
+
+
+<br>
 
 ## 회고록
-
+두루뭉술하게 서술한 구현 사항 설명을 회고록에 가득 담아봤습니다
+- [벨로그](https://velog.io/@tooil10/sinaProjectBrunch-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 
 
@@ -91,5 +114,5 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-```
+
 
