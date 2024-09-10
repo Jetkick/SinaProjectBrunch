@@ -43,7 +43,7 @@
 
 <br>
 
-# 간단한 사용 방법
+# 프로젝트 파보기 및 playGround 간단한 사용 방법
 - [피그마](https://www.figma.com/design/OpVGF0j6GqrMXqoMek6rp5/2%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0-1&node-type=CANVAS&t=GR3aefcLpibblSqo-0)
 <br>
 
