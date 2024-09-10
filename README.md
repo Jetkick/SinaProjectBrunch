@@ -95,6 +95,7 @@
 <br>
 
 ## 회고록
+두루뭉술하게 서술한 구현 사항 설명을 회고록에 가득 담아봤습니다
 - [벨로그](https://velog.io/@tooil10/sinaProjectBrunch-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 
